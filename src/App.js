@@ -3,7 +3,12 @@
 import * as React from "react";
 import { useCombobox } from "./use-combobox";
 import { getItems } from "./filter-cities";
-import { useForceRerender } from "./utils";
+
+// We use the async getItems from the webworker edition of filter-cities
+// import { getItems } from "./workerized-filter-cities";
+
+// We use useAsync hook to dispatch an async function and trigger a rerender
+import { useForceRerender, useAsync } from "./utils";
 
 import "./App.css";
 
@@ -66,6 +71,12 @@ function App() {
 
   // New code: This way, getItems is called only if inputValue has changed even with an App rerender
   const allItems = React.useMemo(() => getItems(inputValue), [inputValue]);
+
+  // Webworker code: We use a webworker to run an expensive function in another thread and cause a rerender when data is calculated:
+  // const { data: allItems, run } = useAsync({ data: [], status: "pending" });
+  // React.useEffect(() => {
+  //   run(getItems(inputValue));
+  // }, [inputValue, run]);
 
   const items = allItems.slice(0, 100);
 
