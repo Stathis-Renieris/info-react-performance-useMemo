@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/info-react-performance-usememo/static/css/main.1674fc61.css",
+    "main.js": "/info-react-performance-usememo/static/js/main.0fccb800.js",
+    "index.html": "/info-react-performance-usememo/index.html",
+    "main.1674fc61.css.map": "/info-react-performance-usememo/static/css/main.1674fc61.css.map",
+    "main.0fccb800.js.map": "/info-react-performance-usememo/static/js/main.0fccb800.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1674fc61.css",
+    "static/js/main.0fccb800.js"
+  ]
+}
